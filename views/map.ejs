@@ -3,9 +3,23 @@
         <h1>Map</h1>
         <main role="main">
             <section>
+            	<div id="map"></div>
             </section>
         </main>
         <div class="sidebar">
         </div>
     </div>
+    <script type="text/javascript">
+    	//create variable to hold map
+    	var map;
+     	function initMap() {
+	        map = new google.maps.Map(document.getElementById('map'), {
+	          center: {lat: 44.600, lng: -79.416},
+	          zoom: 13
+	        });
+    	}
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIMhwAu2f-LXBt2NlhD6d7JwjuLPbo5MQ &callback=initMap" async defer></script>
+    
 <%- include partials/footer %>
+
