@@ -1,0 +1,27 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+}
+
+.navbar-brand {
+    margin-right: 0 px;
+    
+}
+#bs-example-navbar-collapse-1{
+    font-size: 1.5em;
+    color:#ffffff;
+    font-weight: bold;
+}
+a:hover {
+    color: #ffffff; 
+}
+footer {
+    padding: 1%;
+    text-align: center;
+    background-color: #000316;
+}
