@@ -17,7 +17,22 @@
 	          center: {lat: 44.600, lng: -79.416},
 	          zoom: 13
 	        });
+
+        	var points= [
+    			{lat: 44.639101, lng: -79.467201},
+    			{lat: 44.567725, lng: -79.457588},
+    			{lat: 44.605135, lng: -79.381371},
+    			{lat: 44.639101, lng: -79.467201}
+    		];
+	        var rectangle= new google.maps.Polygon({
+	    		strokeColor: '#333',
+	    		map: map,
+	    		paths: points
+    		});
+
+
     	}
+    	
     </script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIMhwAu2f-LXBt2NlhD6d7JwjuLPbo5MQ &callback=initMap" async defer></script>
     
