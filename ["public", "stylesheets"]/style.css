@@ -1,0 +1,39 @@
+body {
+ font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+}
+
+#headertitle{
+    color: black;
+    background-color: #FFDA00;
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px;
+}
+a {
+  color: #ffffff;
+}
+/*logo */
+#logo {
+    padding-top:10px;
+    padding-right: 250px;
+}
+.navbar-brand {
+    margin-right: 0 px;
+    
+}
+#bs-example-navbar-collapse-1{
+    font-size: 1.5em;
+    color:#ffffff;
+    font-weight: bold;
+}
+a:hover {
+    color: #ffffff; 
+}
+
+footer {
+    padding: 1%;
+    text-align: center;
+    background-color: #000316;
+}
