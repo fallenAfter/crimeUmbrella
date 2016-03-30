@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var Research = require('../models/research');
 
 /* Sample index page. */
 router.get('/', function(req, res, next) {
@@ -15,7 +17,20 @@ router.get('/map', function(req, res, next) {
 });
 /* GET data page. */
 router.get('/data', function(req, res, next) {
-  res.render('data', { title: 'Data' });
+	Research.find(function (err,research){
+		if(err){
+			console.log(err);
+			res.end(err);
+		}
+		else{
+			console.log(research.roadConditions);
+			res.render('data', {
+			  	title: 'Data',
+			  	research: research
+			});
+		}
+	});
+  
 });
 /* GET admin page. */
 router.get('/admin', function(req, res, next) {
