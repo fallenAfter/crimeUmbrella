@@ -1,13 +1,34 @@
+html{
+      height: 100%;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ font-family: 'Open Sans', sans-serif;
   color: #ffffff;
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #506383 0%, #3a5073 51%, #253d64 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#253d64',GradientType=0 ); /* IE6-9 */
+background-repeat: no-repeat;
+
 }
 
+#headertitle{
+    color: black;
+    background-color: #FFDA00;
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px;
+}
 a {
   color: #ffffff;
 }
-
+/*logo */
+#logo {
+    padding-top:10px;
+    padding-right: 250px;
+}
 .navbar-brand {
     margin-right: 0 px;
     
@@ -20,8 +41,9 @@ a {
 a:hover {
     color: #ffffff; 
 }
+
 footer {
     padding: 1%;
     text-align: center;
-    background-color: #000316;
+    background-color: #253D64;
 }
