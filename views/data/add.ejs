@@ -1,0 +1,20 @@
+<%- include ../partials/header %>
+<div class="container">
+	<!-- add page header dynamicly from title -->
+    <h1><%= title %></h1>
+    <main role="main">
+        <section>
+        	<form action="/data/add" method="post">
+        		<label for="section">Region number</label>
+        		<input type="number" name="section" id="section">
+        		<label for="">Road Condition</label>
+        		<input type="range" min="1" max="3" value="1" name="roadConditions" id="roadConditions">
+        		<button>Add data value</button>
+        	</form>
+        </section>
+    </main>
+    <div class="sidebar">
+    </div>
+</div>
+<%- include ../partials/footer %>
+
