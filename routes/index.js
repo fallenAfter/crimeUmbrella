@@ -23,7 +23,6 @@ router.get('/data', function(req, res, next) {
 			res.end(err);
 		}
 		else{
-			console.log(research.roadConditions);
 			res.render('data', {
 			  	title: 'Data',
 			  	research: research

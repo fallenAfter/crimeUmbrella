@@ -11,9 +11,67 @@ router.get('/add', function (req,res,next){
 
 //post method to add article to database
 router.post('/add', function (req,res,next){
-	Research.create({
+	//create object to store data
+	var data= {
 		section: req.body.section,
-		roadConditions: req.body.roadConditions
+		density: req.body.density,
+		zoning: req.body.zoning,
+		streetConnection: req.body.streetConnection,
+		sidewalks: req.body.sidewalks,
+		sidewalkWidth: req.body.sidewalkWidth,
+		sidewalkBuffer: req.body.sidewalkBuffer,
+		sidewalkRamps: req.body.sidewalkRamps,
+		sidewalkCondition: req.body.sidewalkCondition,
+		sidewalkObstructions: req.body.sidewalkObstructions,
+		sidewalkSnowfall: req.body.sidewalkSnowfall,
+		crosswalks: req.body.crosswalks,
+		crosswalkSymbols: req.body.crosswalkSymbols,
+		cyclingLanes: req.body.cyclingLanes,
+		cyclingLanesNearest: req.body.cyclingLanesNearest,
+		CyclingRoadSafe: req.body.CyclingRoadSafe,
+		cyclingLanesConnection: req.body.cyclingLanesConnection,
+		cyclingLanesSignage: req.body.cyclingLanesSignage,
+		cyclingLightsAccessability: req.body.cyclingLightsAccessability,
+		cyclingBikeRacks: req.body.cyclingBikeRacks,
+		cyclingBusBikeRack: req.body.cyclingBusBikeRack,
+		roadTrafficFlow: req.body.roadTrafficFlow,
+		roadStreetWidth: req.body.roadStreetWidth,
+		roadOnStreetParking: req.body.roadOnStreetParking,
+		roadTrafficCalming: req.body.roadTrafficCalming,
+		roadVehicleRestrictions: req.body.roadVehicleRestrictions,
+		trailPaths: req.body.trailPaths,
+		trailsConnection: req.body.trailsConnection,
+		trailSafety: req.body.trailSafety,
+		trailSkateboard: req.body.trailSkateboard,
+		transitStops: req.body.transitStops,
+		transitClosestStop: req.body.transitClosestStop,
+		transitShelters: req.body.transitShelters,
+		transitRouteInfo: req.body.transitRouteInfo,
+		safetyGeneralSafety: req.body.safetyGeneralSafety,
+		safetyVacantBuildings: req.body.safetyVacantBuildings,
+		safetyPersonsWatching: req.body.safetyPersonsWatching,
+		aestheticTrees: req.body.aestheticTrees,
+		aestheticStreetLife: req.body.aestheticStreetLife,
+		aestheticBuildingProximity: req.body.aestheticBuildingProximity,
+		aestheticWeatherProtection: req.body.aestheticWeatherProtection,
+		aestheticStreetFurniture: req.body.aestheticStreetFurniture,
+		aestheticStreetscape: req.body.aestheticStreetscape,
+		servicesAccess: req.body.servicesAccess,
+		servicesGroceryProximity: req.body.servicesGroceryProximity,
+		servicesParkProximity: req.body.servicesParkProximity,
+		servicesHealthcare: req.body.servicesHealthcare,
+		planningOCP: req.body.planningOCP,
+		planningPedestrianPlan: req.body.planningPedestrianPlan,
+		planningMunicipalCommitees: req.body.planningMunicipalCommitees,
+		planningEvents: req.body.planningEvents
+	}
+	console.log(data);
+
+	Research.create(data, function (err, data){
+		if(err){
+			console.log(err);
+		}
+
 	});
 	//redirect to global data page
 	res.redirect('/data');
@@ -49,7 +107,56 @@ router.post('/edit/:id', function (req,res,next){
 	var research = new Research({
 		_id: id,
 		section: req.body.section,
-		roadConditions: req.body.roadConditions
+		density: req.body.density,
+		zoning: req.body.zoning,
+		streetConnection: req.body.streetConnection,
+		sidewalks: req.body.sidewalks,
+		sidewalkWidth: req.body.sidewalkWidth,
+		sidewalkBuffer: req.body.sidewalkBuffer,
+		sidewalkRamps: req.body.sidewalkRamps,
+		sidewalkCondition: req.body.sidewalkCondition,
+		sidewalkObstructions: req.body.sidewalkObstructions,
+		sidewalkSnowfall: req.body.sidewalkSnowfall,
+		crosswalks: req.body.crosswalks,
+		crosswalkSymbols: req.body.crosswalkSymbols,
+		cyclingLanes: req.body.cyclingLanes,
+		cyclingLanesNearest: req.body.cyclingLanesNearest,
+		CyclingRoadSafe: req.body.CyclingRoadSafe,
+		cyclingLanesConnection: req.body.cyclingLanesConnection,
+		cyclingLanesSignage: req.body.cyclingLanesSignage,
+		cyclingLightsAccessability: req.body.cyclingLightsAccessability,
+		cyclingBikeRacks: req.body.cyclingBikeRacks,
+		cyclingBusBikeRack: req.body.cyclingBusBikeRack,
+		roadTrafficFlow: req.body.roadTrafficFlow,
+		roadStreetWidth: req.body.roadStreetWidth,
+		roadOnStreetParking: req.body.roadOnStreetParking,
+		roadTrafficCalming: req.body.roadTrafficCalming,
+		roadVehicleRestrictions: req.body.roadVehicleRestrictions,
+		trailPaths: req.body.trailPaths,
+		trailsConnection: req.body.trailsConnection,
+		trailSafety: req.body.trailSafety,
+		trailSkateboard: req.body.trailSkateboard,
+		transitStops: req.body.transitStops,
+		transitClosestStop: req.body.transitClosestStop,
+		transitShelters: req.body.transitShelters,
+		transitRouteInfo: req.body.transitRouteInfo,
+		safetyGeneralSafety: req.body.safetyGeneralSafety,
+		safetyVacantBuildings: req.body.safetyVacantBuildings,
+		safetyPersonsWatching: req.body.safetyPersonsWatching,
+		aestheticTrees: req.body.aestheticTrees,
+		aestheticStreetLife: req.body.aestheticStreetLife,
+		aestheticBuildingProximity: req.body.aestheticBuildingProximity,
+		aestheticWeatherProtection: req.body.aestheticWeatherProtection,
+		aestheticStreetFurniture: req.body.aestheticStreetFurniture,
+		aestheticStreetscape: req.body.aestheticStreetscape,
+		servicesAccess: req.body.servicesAccess,
+		servicesGroceryProximity: req.body.servicesGroceryProximity,
+		servicesParkProximity: req.body.servicesParkProximity,
+		servicesHealthcare: req.body.servicesHealthcare,
+		planningOCP: req.body.planningOCP,
+		planningPedestrianPlan: req.body.planningPedestrianPlan,
+		planningMunicipalCommitees: req.body.planningMunicipalCommitees,
+		planningEvents: req.body.planningEvents
 	});
 	//update model
 	Research.update({ _id: id}, research, function (err){
