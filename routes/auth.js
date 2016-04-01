@@ -27,7 +27,7 @@ router.post('/register', function(req, res, next) {
      * If we get an error, display the register form again
      * If registration works, store the user and show the articles main page */
     Account.register(new Account(
-        { username: req.body.username, email: req.body.email }), req.body.password, function(err, account) {
+        { username: req.body.username, name: req.body.name, adminLevel: req.body.adminLevel }), req.body.password, function(err, account) {
         if (err) {
             res.render('auth/register', {
                 title: 'Register'

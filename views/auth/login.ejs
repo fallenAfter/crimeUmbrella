@@ -8,9 +8,11 @@
         <!--login form-->
         <form method="post" action="/auth/login">
             <div>
-                <input name="username" id="username" placeholder="Username" required>
+                <label>Email: </label>
+                <input type="email" name="username" id="username" placeholder="Email" required>
             </div>
             <div>
+                <label>Password: </label>
                 <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <button>Log In</button>
