@@ -4,9 +4,10 @@ var passportLocalMongoose = require('passport-local-mongoose');
 
 // create the account schema
 var Account = new schema({
-    //email: String,
     username: String,
-    password: String
+    password: String,
+    name: String,
+    adminLevel: Number
     //name: String
 });
 
