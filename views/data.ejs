@@ -3,6 +3,30 @@
     <h1>Data</h1>
     <main role="main">
         <section>
+            <a href="/data/add">Add Data</a>
+        	<table>
+        		<thead>
+        			<tr>
+        				<th>Section #</th>
+        				<th>Road Condition</th>
+        				<th></th>
+        				<th>Edit</th>
+        				<th>Delete</th>
+        			</tr>
+        		</thead>
+        		<tbody>
+        			<!--create a table row for each data section -->
+        			<% for(var counter=0;counter<research.length;counter++){ %>
+						<tr>
+							<td><%= research[counter].section %></td>
+							<td><%= research[counter].roadConditions %></td>
+							<td></td>
+							<td><a href="/data/edit/<%= research[counter]._id %>">edit</a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>">delete</a></td>
+						</tr>
+        			<% } %>
+        		</tbody>
+        	</table>
         </section>
     </main>
     <div class="sidebar">
