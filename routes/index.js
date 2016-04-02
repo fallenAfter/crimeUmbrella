@@ -28,7 +28,7 @@ router.get('/data', function(req, res, next) {
 			  	research: research
 			});
 		}
-	});
+	}).sort({section:1});
   
 });
 /* GET admin page. */
