@@ -9,6 +9,14 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+// auth packages
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+var localStrategy = require('passport-local').Strategy;
+
+// add auth connection
+var auth = require('./routes/auth');
 
 // create an app
 var app = express();
@@ -22,6 +30,10 @@ db.once('open', function(callback){
   console.log('Connected to mongodb');
 });
 
+// read db connection string from our config file
+var configDb = require('./config/db.js');
+mongoose.connect(configDb.url);
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
@@ -30,8 +42,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// enable flash for showing messages
+app.use(flash());
+// passport config section
+app.use(session({
+  secret: 'lesson8 auth',
+  resave: true,
+  saveUninitialized: false
+}));
+////////////////////////
+app.use(passport.initialize());
+////////////////////////
+app.use(passport.session());
+// use the Account model we built
+var Account = require('./models/account');
+passport.use(Account.createStrategy());
+//// methods for accessing the session data
+passport.serializeUser(Account.serializeUser);
+passport.deserializeUser(Account.deserializeUser);
+
 app.use('/', routes);
 app.use('/users', users);
+// map requests at /auth
+app.use('/auth', auth);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
