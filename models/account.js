@@ -7,7 +7,7 @@ var Account = new schema({
     username: String,
     password: String,
     name: String,
-    adminLevel: Number
+    adminLevel: String
     //name: String
 });
 
