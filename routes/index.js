@@ -13,7 +13,28 @@ router.get('/home', function(req, res, next) {
 });
 /* GET map page. */
 router.get('/map', function(req, res, next) {
-  res.render('map', { title: 'Map' });
+	//query database for research information
+	Research.find(function (err, research){
+		if(err){
+			console.log(err);
+			res.end(err);
+		}
+		console.log(research);
+		res.render('map', {
+		   	title: 'Map',
+		   	research: research
+	   });
+	});
+  
+});
+router.get('/map/data', function(req,res,next){
+	Research.find(function (err, research){
+		if(err){
+			console.log(err);
+			res.end(err);
+		}
+		return research;
+	   });
 });
 /* GET data page. */
 router.get('/data', function(req, res, next) {
