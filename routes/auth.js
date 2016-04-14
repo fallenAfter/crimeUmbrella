@@ -13,11 +13,6 @@ passport.deserializeUser(function(id, done) {
     Account.findById(id, function(err, user){
         done(err,user);
     });
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
 });
 
 // GET register - show registration form
@@ -32,19 +27,12 @@ router.post('/register', function(req, res, next) {
      * If we get an error, display the register form again
      * If registration works, store the user and show the articles main page */
     Account.register(new Account(
-<<<<<<< HEAD
         { username: req.body.username, name: req.body.name, adminLevel: req.body.adminLevel }), req.body.password, function(err, account) {
-=======
-        { username: req.body.username }), req.body.password, function(err, account) {
->>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
         if (err) {
             res.render('auth/register', {
                 title: 'Register'
             });
-<<<<<<< HEAD
             console.log(err);
-=======
->>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
         }
         else {
             req.login(account, function(err) {

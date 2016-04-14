@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
 var mongoose = require('mongoose');
 var Research = require('../models/research');
-=======
->>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
 
 /* Sample index page. */
 router.get('/', function(req, res, next) {
@@ -16,7 +13,6 @@ router.get('/home', function(req, res, next) {
 });
 /* GET map page. */
 router.get('/map', function(req, res, next) {
-<<<<<<< HEAD
 	//query database for research information
 	Research.find(function (err, research){
 		if(err){
@@ -55,13 +51,11 @@ router.get('/data', function(req, res, next) {
 		}
 	}).sort({section:1});
   
-=======
   res.render('map', { title: 'Map' });
 });
 /* GET data page. */
 router.get('/data', function(req, res, next) {
   res.render('data', { title: 'Data' });
->>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
 });
 /* GET admin page. */
 router.get('/admin', function(req, res, next) {
