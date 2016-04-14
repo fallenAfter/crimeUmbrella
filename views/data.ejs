@@ -1,6 +1,7 @@
 <%- include partials/header %>
 <div class="container">
     <h1>Data</h1>
+<<<<<<< HEAD
     <main role="main">
         <section>
             <a href="/data/add">Add Data</a>
@@ -11,11 +12,23 @@
         				<th>density</th>
         				<th>zoning</th>
                         <th>connected streets</th>
+=======
+    <main id="dataform" role="main">
+        <section>
+            <a href="/data/add">Add Data</a>
+        	<table class="table table-striped">
+        		<thead>
+        			<tr>
+        				<th>Section #</th>
+        				<th>Road Condition</th>
+        				<th></th>
+>>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
         				<th>Edit</th>
         				<th>Delete</th>
         			</tr>
         		</thead>
         		<tbody>
+<<<<<<< HEAD
         			<!--create a table row for each data section -->
         			<% for(var counter=0;counter<research.length;counter++){ %>
 						<tr>
@@ -306,6 +319,18 @@
             </table>
 
 
+=======
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="#">edit</a></td>
+							<td><a href="#>">delete</a></td>
+						</tr>
+        			 
+        		</tbody>
+        	</table>
+>>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
         </section>
     </main>
     <div class="sidebar">

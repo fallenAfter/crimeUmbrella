@@ -17,8 +17,11 @@ var localStrategy = require('passport-local').Strategy;
 
 // add auth connection
 var auth = require('./routes/auth');
+<<<<<<< HEAD
 var data = require('./routes/data');
 var accounts = require('./routes/accounts');
+=======
+>>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
 
 // create an app
 var app = express();
@@ -67,9 +70,12 @@ app.use('/', routes);
 app.use('/users', users);
 // map requests at /auth
 app.use('/auth', auth);
+<<<<<<< HEAD
 // map /data into scope
 app.use('/data', data);
 app.use('/accounts', accounts);
+=======
+>>>>>>> 6c0e2a8bc5c19efd0435cbb9144aa4c105b20760
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
