@@ -2,7 +2,7 @@
 <div class="container">
 	<!-- add page header dynamicly from title -->
     <h1><%= title %></h1>
-    <main role="main">
+    <main id="addfrom" role="main">
         <section>
         	<form action="/data/add" method="post">
         		<label for="section">Region number</label>
@@ -206,8 +206,8 @@
                     <input type="range" min="1" max="3" value="1" name="planningEvents" id="planningEvents">
 
                 </fieldset>
-
-        		<button>Add data value</button>
+               
+        		<button id="addbtn">Add data value</button>
         	</form>
         </section>
     </main>
@@ -215,4 +215,3 @@
     </div>
 </div>
 <%- include ../partials/footer %>
-
