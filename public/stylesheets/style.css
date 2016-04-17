@@ -114,6 +114,9 @@ background-repeat: no-repeat;
     
     
 }
+#dataform tbody>tr>td {
+    color:black;
+}
 /*styles for homepage icons*/
 #welcomeicon>img{
 
@@ -161,6 +164,19 @@ main.map>section:nth-of-type(2){
     overflow-y:scroll;
     display: inline-block;
     padding:0 3%;
+}
+/*add form styles*/
+#addfrom{
+ margin:5%; 
+}
+#addbtn {
+    padding: 10px;
+    background-color: #FFDA00;
+}
+#editbtn {
+      margin-top: 15px;
+     padding: 10px;
+    background-color: #FFDA00;
 }
 #map{
     width:100%;
