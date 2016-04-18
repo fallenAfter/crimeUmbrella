@@ -1,13 +1,8 @@
 <%- include partials/header %>
 <div class="container">
-
-    <h1>Admin</h1>
     <main role="main">
             <h1><%= title %></h1>
-            <table>
-
-    <main role="main">
-            <h1><%= title %></h1>
+            <a href="/auth/register">Add New User</a>
             <table class="table table-striped">
 
                 <thead>
@@ -15,6 +10,7 @@
                     <th scope="rowgroup">Username</th>
                     <th scope="col">Name</th>
                     <th scope="col">Admin Level</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,6 +20,7 @@
                     <td><%= accounts[i].username %></td>
                     <td><%= accounts[i].name %></td>
                     <td><%= accounts[i].adminLevel %></td>
+                    <td><button><a href="/accounts/delete/<%= accounts[i]._id %>" class="confirmation">DELETE</a></button></td>
                 </tr>
                 <% } %>
 

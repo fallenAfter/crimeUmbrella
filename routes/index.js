@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Research = require('../models/research');
+var Accounts = require('../models/account');
 
 /* Sample index page. */
 router.get('/', function(req, res, next) {
@@ -54,7 +55,14 @@ router.get('/data', function(req, res, next) {
 });
 /* GET admin page. */
 router.get('/admin', function(req, res, next) {
-  res.render('admin', { title: 'Admin' });
+	Accounts.find(function (err, users){
+		if(err){
+			console.log(err);
+			res.end(err)
+		}
+		res.render('admin', { title: 'Admin', accounts: users });
+	});
+	
 });
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
