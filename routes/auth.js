@@ -36,7 +36,7 @@ router.post('/register', function(req, res, next) {
         }
         else {
             req.login(account, function(err) {
-                res.redirect('login');
+                res.redirect('/admin');
             });
         }
     });
