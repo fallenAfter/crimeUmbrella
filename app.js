@@ -44,6 +44,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // enable flash for showing messages
 app.use(flash());
 // passport config section

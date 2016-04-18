@@ -1,101 +1,5 @@
-<%- include partials/header %>
-    <div class="container">
-        <h1>Map</h1>
-        <main role="main" class="map">
-            <section>
-            	<div id="map"></div>
-            </section><section class="sidebar">
-                <h2>section <em id="sectionNo"></em></h2>
-                <div id="data">
-                    <h3>Zoning</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Density <em></em></em></li>
-                        <li class="list-group-item">Zoning <em></em></li>
-                        <li class="list-group-item">Connecting Streets <em></em></li>
-                    </ul>
-                    <h3>Sidewalks</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Sidewalks <em></em></li>
-                        <li class="list-group-item">Width <em></em></li>
-                        <li class="list-group-item">Buffer <em></em></li>
-                        <li class="list-group-item">ramps <em></em></li>
-                        <li class="list-group-item">conditions <em></em></li>
-                        <li class="list-group-item">obstructions <em></em></li>
-                        <li class="list-group-item">Snow clearing <em></em></li>
-                        <li class="list-group-item">crosswalks <em></em></li>
-                        <li class="list-group-item">crosswalk symbols<em></em></li>
-                    </ul>
-                    <h3>Cycling</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">dedicated lanes <em></em></li>
-                        <li class="list-group-item">nearest dedicated lane <em></em></li>
-                        <li class="list-group-item">Cycling safety <em></em></li>
-                        <li class="list-group-item">Connection to city hubs <em></em></li>
-                        <li class="list-group-item">lane signage <em></em></li>
-                        <li class="list-group-item">crosswalk accesibility <em></em></li>
-                        <li class="list-group-item">bike racks <em></em></li>
-                        <li class="list-group-item">bus mounted bike racks <em></em></li>
-                    </ul>
-                    <h3>Roads</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Traffic Flow <em></em></li>
-                        <li class="list-group-item">street width <em></em></li>
-                        <li class="list-group-item">on street parking <em></em></li>
-                        <li class="list-group-item">traffic calming <em></em></li>
-                        <li class="list-group-item">veihicle restrictions <em></em></li>
-                    </ul>
-                    <h3>Trails</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Paths <em></em></li>
-                        <li class="list-group-item">Connection to city hubs <em></em></li>
-                        <li class="list-group-item">safety <em></em></li>
-                        <li class="list-group-item">skateboards <em></em></li>
-                    </ul>
-                    <h3>Public transit</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Stops <em></em></li>
-                        <li class="list-group-item">closest stop <em></em></li>
-                        <li class="list-group-item">shelters <em></em></li>
-                        <li class="list-group-item">route information <em></em></li>
-                    </ul>
-                    <h3>Safety</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">General safety <em></em></li>
-                        <li class="list-group-item">vacant buildings <em></em></li>
-                        <li class="list-group-item">persons watching <em></em></li>
-                    </ul>
-                    <h3>Asthetics</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Trees <em></em></li>
-                        <li class="list-group-item">street life <em></em></li>
-                        <li class="list-group-item">building proximity to street <em></em></li>
-                        <li class="list-group-item">weather protection <em></em></li>
-                        <li class="list-group-item">street furniture <em></em></li>
-                        <li class="list-group-item">streetscape <em></em></li>
-                    </ul>
-                    <h3>Services</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Service access <em></em></li>
-                        <li class="list-group-item">proximity to groceries <em></em></li>
-                        <li class="list-group-item">proximity to park <em></em></li>
-                        <li class="list-group-item">access to healthcare <em></em></li>
-                    </ul>
-
-                    <h3>Planning</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">OCP <em></em></li>
-                        <li class="list-group-item">pedestrian plan <em></em></li>
-                        <li class="list-group-item">municipal commities <em></em></li>
-                        <li class="list-group-item">events <em></em></li>
-                    </ul>
-
-                </div>
-            </section>
-        </main>
-    </div>
-    <script type="text/javascript">
-        //create variable to hold map
-        var map;
+//create variable to hold map
+    	var map;
         //variable for coordinate limits
         // this contains the the information for how large of an area to build sections
         var north= 44.617070;
@@ -112,11 +16,11 @@
         //create an array to store handle the click function for each section
         var sectionClick = new Array;
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: 44.600, lng: -79.416},
-              zoom: 13
-            });
+     	function initMap() {
+	        map = new google.maps.Map(document.getElementById('map'), {
+	          center: {lat: 44.600, lng: -79.416},
+	          zoom: 13
+	        });
 
             var XInter= 0;
             var YInter= 0;
@@ -159,7 +63,7 @@
                 openSection(counter, thisSection[counter]);
 
             }
-        };
+    	};
         //function to manage clicking a section
         function openSection (section, event){
             google.maps.event.addListener(event, 'click',function(){
@@ -188,7 +92,7 @@
             var sectionData= [];
             var sectionIteration = 0;
             <% for(var dbCounter =0;dbCounter<research.length; dbCounter++){ %>
-                if('<%= research[dbCounter].section %>' == section){
+                if(<%= research[dbCounter].section %> == section){
                     //assaign objects to variables
                     var dataVariable =[
                         <%= research[dbCounter].density %>,
@@ -272,9 +176,3 @@
 
             
         }
-    </script>
-    <!--<script type="text/javascript" src="javascripts/map.js"></script>-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIMhwAu2f-LXBt2NlhD6d7JwjuLPbo5MQ &callback=initMap" async defer></script>
-    
-<%- include partials/footer %>
-
