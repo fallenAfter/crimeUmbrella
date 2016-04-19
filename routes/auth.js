@@ -63,6 +63,21 @@ router.post('/login', passport.authenticate('local', {
     failureMessage: 'Invalid Login'
 }));
 
+// GET handler for delete process
+router.get('/delete/:id', isAuth, function(req, res, next) {
+    // grab the id parameter from the url
+    var id = req.params.id;
+
+    Account.remove({_id: id}, function(err) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            res.redirect('/admin');
+        }
+    });
+});
+
 function isAuth(req,res,next){
     if(req.isAuthenticated()){
         return next();
@@ -71,6 +86,7 @@ function isAuth(req,res,next){
         res.redirect('/auth/login');
     }
 }
+
 
 //make this public
 module.exports = router, passport;

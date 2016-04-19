@@ -26,20 +26,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-// GET handler for delete process
-router.get('/delete/:id', function(req, res, next) {
-    // grab the id parameter from the url
-    var id = req.params.id;
-
-    Account.remove({_id: id}, function(err) {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        } else {
-            res.redirect('/accounts');
-        }
-    });
-});
 
 //make this public
 module.exports = router, passport;
