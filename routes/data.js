@@ -3,14 +3,14 @@ var router = express.Router();
 var mongoose= require('mongoose');
 var Research = require('../models/research');
 
-router.get('/add', function (req,res,next){
+router.get('/add', isAuth, function (req,res,next){
 	res.render('data/add',{
 		title:'add entry'
 	});
 });
 
 //post method to add article to database
-router.post('/add', function (req,res,next){
+router.post('/add', isAuth, function (req,res,next){
 	//create object to store data
 	var data= {
 		section: req.body.section,
@@ -78,7 +78,7 @@ router.post('/add', function (req,res,next){
 });
 
 //edit update functions
-router.get('/edit/:id', function (req,res,next){
+router.get('/edit/:id', isAuth, function (req,res,next){
 	//get it grom address bar
 	id= req.params.id;
 	//query database for entry matching id
@@ -99,7 +99,7 @@ router.get('/edit/:id', function (req,res,next){
 });
 
 //create post function to update the database
-router.post('/edit/:id', function (req,res,next){
+router.post('/edit/:id', isAuth, function (req,res,next){
 	//get id from url
 	id = req.params.id;
 	//populate model
@@ -171,7 +171,7 @@ router.post('/edit/:id', function (req,res,next){
 });
 
 //create delete function
-router.get('/delete/:id', function (req,res,next){
+router.get('/delete/:id', isAuth, function (req,res,next){
 	//get id from url
 	var id = req.params.id;
 	//remove data
@@ -185,5 +185,15 @@ router.get('/delete/:id', function (req,res,next){
 		}
 	});
 });
+
+//function to see if user is authenticated
+function isAuth(req,res,next){
+	if(req.isAuthenticated()){
+		return next();
+	}
+	else{
+		res.redirect('/auth/login');
+	}
+}
 
 module.exports = router;

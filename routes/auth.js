@@ -16,13 +16,13 @@ passport.deserializeUser(function(id, done) {
 });
 
 // GET register - show registration form
-router.get('/register', function(req,res,next) {
+router.get('/register', isAuth, function(req,res,next) {
     res.render('auth/register', {
         title: 'Register'
     });
 });
 // POST register - save new user
-router.post('/register', function(req, res, next) {
+router.post('/register', isAuth, function(req, res, next) {
     /* Try to create a new account using our Account model & the form values
      * If we get an error, display the register form again
      * If registration works, store the user and show the articles main page */
@@ -62,6 +62,15 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/auth/login',
     failureMessage: 'Invalid Login'
 }));
+
+function isAuth(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    else{
+        res.redirect('/auth/login');
+    }
+}
 
 //make this public
 module.exports = router, passport;
