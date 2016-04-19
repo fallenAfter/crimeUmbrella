@@ -77,6 +77,10 @@ router.get('/delete/:id', isAuth, function(req, res, next) {
         }
     });
 });
+router.get('/logout', isAuth, function (req,res,next){
+    req.session.destroy();
+    res.redirect('/');
+});
 
 function isAuth(req,res,next){
     if(req.isAuthenticated()){
