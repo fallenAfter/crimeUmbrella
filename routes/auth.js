@@ -16,13 +16,13 @@ passport.deserializeUser(function(id, done) {
 });
 
 // GET register - show registration form
-router.get('/register', isAuth, function(req,res,next) {
+router.get('/register', isAdmin, function(req,res,next) {
     res.render('auth/register', {
         title: 'Register'
     });
 });
 // POST register - save new user
-router.post('/register', isAuth, function(req, res, next) {
+router.post('/register', isAdmin, function(req, res, next) {
     /* Try to create a new account using our Account model & the form values
      * If we get an error, display the register form again
      * If registration works, store the user and show the articles main page */
@@ -86,6 +86,15 @@ function isAuth(req,res,next){
     }
     else{
         res.redirect('/auth/login');
+    }
+}
+//function to authenticate if user is an admin for admin only pages and forms
+function isAdmin (req,res, next){
+    if(!req.user||req.user.adminLevel != 'administrator'){
+        res.redirect('/auth/login');
+    }
+    else{
+        return next();
     }
 }
 
