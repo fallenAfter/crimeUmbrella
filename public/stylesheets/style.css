@@ -114,8 +114,10 @@ background-repeat: no-repeat;
 }
 /*sidebar styles*/
 #data>h3{
+    color: #000316;
     background-color: #FFDA00;
-    padding: 0.5%;
+    padding: 1.5%;
+    padding-left: 4%;
    border-radius: 3px 3px 3px 3px;
 -moz-border-radius: 3px 3px 3px 3px;
 -webkit-border-radius: 3px 3px 3px 3px;
