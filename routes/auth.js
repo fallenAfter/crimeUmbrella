@@ -35,9 +35,7 @@ router.post('/register', isAuth, function(req, res, next) {
             console.log(err);
         }
         else {
-            req.login(account, function(err) {
-                res.redirect('/admin');
-            });
+            res.redirect('/admin');
         }
     });
 });
