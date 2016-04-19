@@ -55,6 +55,7 @@ a:hover {
      margin: 30px;
 }
 #lofginbtn{
+     color: #253D64;
     padding: 10px;
     background-color: #FFDA00;
 }
@@ -69,7 +70,8 @@ a:hover {
    color: white; 
 }
 #reigsterbtn{
-     padding: 10px;
+     color: #253D64;
+    padding: 10px;
     background-color: #FFDA00;
 }
 
@@ -127,10 +129,12 @@ border: 0px solid #000000;
 #contactf{
      background-color:  #253D64;
     padding:50px;
-    color:black;
-     margin: 30px;
+    color:#ffffff;
+     margin-left: 30px;
+
 }
 #contactfbtn{
+     color: #253D64;
     padding: 10px;
     background-color: #FFDA00;
 }
@@ -161,9 +165,21 @@ main.map>section:nth-of-type(2){
     height:100%;
 }
 button {
-    
+    color: #253D64;
+    border: none;
+    text-decoration: none;
     padding: 5px;
     background-color: #FFDA00;
+}
+#deletetn{
+    color: #253D64;
+    border: none;
+    text-decoration: none;
+    padding: 5px;
+    background-color: #FFDA00;
+}
+button a: hover{
+    text-decoration: none;
 }
 
 footer {
