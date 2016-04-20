@@ -3,6 +3,18 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Research = require('../models/research');
 var Accounts = require('../models/account');
+//include nodemailer
+var nodemailer = require('nodemailer');
+
+//set up transporter for gmail
+var transporter = nodemailer.createTransport({
+	service: 'gmail',
+	auth: {
+		user: 'ideafactorygeorgian@gmail.com',
+		pass: 'Rachel2016'
+	},
+	debug: true
+});
 
 /* Sample index page. */
 router.get('/', isAuth, function(req, res, next) {
@@ -64,6 +76,34 @@ router.get('/admin', isAdmin, function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Conatact' });
 });
+
+// post for contact page. This will take form information submited and use it to compose and send an email using node mailer
+router.post('/contact', function (req,res,next){
+	//create object for sending mail
+	//this is done here because the post will return some variables that are required for the message
+	var mailOptions = {
+		from: 'ideafactorygeorgian@gmail.com',
+		to: 'ideafactorygeorgian@gmail.com',
+		subject: 'Contact from contact form',
+		html: '<p>'+ req.body.message+'</p><p>'+req.body.fName+' '+req.body.lName+'</p><p>'+req.body.email+'</p>'
+	}
+	//send mail
+	transporter.sendMail(mailOptions, function(error, info){
+		if(error){
+			console.log(error);
+			res.end(error);
+		}
+		else{
+			console.log('mail sent');
+			res.redirect('/mail');
+		}
+	})
+});
+//page to send user after mail was sent successfully
+router.get('/mail', function(req,res,next){
+	res.render('mail', {title: 'Mail Sent'});
+});
+
 /* GET register page. */
 router.get('/register', isAuth, function(req, res, next) {
   res.render('register', { title: 'Register' });
@@ -75,7 +115,8 @@ router.get('/login', function(req, res, next) {
 // need to be admin page. users redirected here if they are not an admin and try accessing the admin page
 router.get('/login', function(req,res,next){
 	res.render('needPermissions', {title: 'admin required'})
-})
+});
+
 
 //function to see if user is authenticated
 function isAuth(req,res,next){
