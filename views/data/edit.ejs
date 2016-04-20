@@ -2,7 +2,7 @@
 <div class="container">
 	<!-- add page header dynamicly from title -->
     <h1><%= title %></h1>
-    <main role="main">
+    <main id="editform" role="main">
         <section>
         	<form action="/data/edit/<%= research._id %>" method="post">
         		<label for="section">Region number</label>
@@ -207,7 +207,7 @@
 
                 </fieldset>
 		<br>
-                <button id="editbtn">Add data value</button>
+                <button class="btn btn-default">Add Data Value</button>
             </form>
         </section>
     </main>
