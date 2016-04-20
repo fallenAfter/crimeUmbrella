@@ -23,8 +23,7 @@
 							<td><%= research[counter].density %></td>
 							<td><%= research[counter].zoning %></td>
                             <td><%= research[counter].streetConnection %></td>
-							<td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
+							<td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>						<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
 						</tr>
         			<% } %>
         		</tbody>
@@ -45,7 +44,7 @@
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <table class="table table-striped">
+                <tbody>
                     <!--create a table row for each data section -->
                     <% for(var counter=0;counter<research.length;counter++){ %>
                         <tr>
