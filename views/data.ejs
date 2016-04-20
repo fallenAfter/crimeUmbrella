@@ -3,7 +3,7 @@
     <h1>Data</h1>
     <main id="dataform" role="main">
         <section>
-            <a class ="new" href="/data/add">Add Data</a><br><br>
+            <button class="btn btn-default"><a href="/data/add">Add Data</a></button><br><br>
             <table class="table table-striped">
         		<thead>
         			<tr>
@@ -23,8 +23,8 @@
 							<td><%= research[counter].density %></td>
 							<td><%= research[counter].zoning %></td>
                             <td><%= research[counter].streetConnection %></td>
-							<td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+							<td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
 						</tr>
         			<% } %>
         		</tbody>
@@ -57,8 +57,8 @@
                             <td><%= research[counter].sidewalkCondition %></td>
                             <td><%= research[counter].sidewalkObstructions %></td>
                             <td><%= research[counter].sidewalkSnowfall %></td>
-                          <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                          <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -97,8 +97,8 @@
                             <td><%= research[counter].cyclingLightsAccessability %></td>
                             <td><%= research[counter].cyclingBikeRacks %></td>
                             <td><%= research[counter].cyclingBusBikeRack %></td>
-                          <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                      <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -127,8 +127,8 @@
                             <td><%= research[counter].roadOnStreetParking %></td>
                             <td><%= research[counter].roadTrafficCalming %></td>
                             <td><%= research[counter].roadVehicleRestrictions %></td>
-                           <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                          <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -155,8 +155,8 @@
                             <td><%= research[counter].trailsConnection %></td>
                             <td><%= research[counter].trailSafety %></td>
                             <td><%= research[counter].trailSkateboard %></td>
-                          <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                        <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -183,8 +183,8 @@
                             <td><%= research[counter].transitClosestStop %></td>
                             <td><%= research[counter].transitShelters %></td>
                             <td><%= research[counter].transitRouteInfo %></td>
-                           <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                        <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -209,8 +209,8 @@
                             <td><%= research[counter].safetyGeneralSafety %></td>
                             <td><%= research[counter].safetyVacantBuildings %></td>
                             <td><%= research[counter].safetyPersonsWatching %></td>
-                           <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                        <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -242,8 +242,8 @@
                             <td><%= research[counter].aestheticWeatherProtection %></td>
                             <td><%= research[counter].aestheticStreetFurniture %></td>
                             <td><%= research[counter].aestheticStreetscape %></td>
-                           <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                      <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -270,8 +270,8 @@
                             <td><%= research[counter].servicesGroceryProximity %></td>
                             <td><%= research[counter].servicesParkProximity %></td>
                             <td><%= research[counter].servicesHealthcare %></td>
-                         <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                        <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -298,8 +298,8 @@
                             <td><%= research[counter].planningPedestrianPlan %></td>
                             <td><%= research[counter].planningMunicipalCommitees %></td>
                             <td><%= research[counter].planningEvents %></td>
-                          <td><a href="/data/edit/<%= research[counter]._id %>"><button>edit</button></a></td>
-							<td><a href="/data/delete/<%= research[counter]._id %>"><button>delete</button></a></td>
+                        <td><a href="/data/edit/<%= research[counter]._id %>"><button class="btn btn-default">Edit</button></a></td>
+							<td><a href="/data/delete/<%= research[counter]._id %>"><button class="btn btn-default">Delete</button></a></td>
                         </tr>
                     <% } %>
                 </tbody>
