@@ -157,20 +157,26 @@ main.map>section:nth-of-type(2){
 }
 /*add form styles*/
 #addfrom{
- margin:5%; 
+ background-color: #253D64;
+ padding: 4%;
+ 
 }
-
+#editform {
+    background-color: #253D64;
+     padding: 4%;
+}
 #map{
     width:100%;
     height:100%;
 }
-button {
+/*button {
     color: #253D64;
     border: none;
     text-decoration: none;
     padding: 5px;
     background-color: #FFDA00;
-}
+    font-weight: bold;
+}*/
 
 button a: hover{
     text-decoration: none;
@@ -181,7 +187,7 @@ table {
     background-color: 
     #253D64;
 }
-.new {
+/*.new {
     color: #253D64;
     border: none;
     text-decoration: none;
@@ -191,7 +197,7 @@ table {
 .new:hover{
     text-decoration: none;
      color: #253D64;
-}
+}*/
 /* adddata page styles-pop up form*/
 #myModal {
    background-color: rgba(0,3,22,0.7);
