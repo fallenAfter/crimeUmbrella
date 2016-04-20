@@ -5,7 +5,7 @@
            
             <table class="table table-striped">
                      
-                    <a class ="new" href="/auth/register">Add New User</a><br><br>
+                <button class="btn btn-default"><a  href="/auth/register">Add New User</a></button><br><br>
                 <thead>
                 <tr>
                     <th scope="rowgroup">Username</th>
@@ -21,7 +21,7 @@
                     <td><%= accounts[i].username %></td>
                     <td><%= accounts[i].name %></td>
                     <td><%= accounts[i].adminLevel %></td>
-                    <td><a id="deletetn" href="/auth/delete/<%= accounts[i]._id %>" class="confirmation"><button >DELETE</button></a></td>
+                    <td><a id="deletetn" href="/auth/delete/<%= accounts[i]._id %>" class=" confirmation"><button class="btn btn-default">Delete</button></a></td>
                 </tr>
                 <% } %>
 
