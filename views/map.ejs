@@ -8,6 +8,9 @@
             </section><section class="sidebar">
                 <h2>section <em id="sectionNo"></em></h2>
                 <div id="data">
+                    <ul>
+                        <li>Overall Score <em></em></li>
+                    </ul>
                     <h3>Zoning</h3>
                     <ul class="list-group">
                         <li class="list-group-item">Density <em></em></em></li>
@@ -377,16 +380,17 @@
                 var output =document.getElementById('data').getElementsByTagName('em');
 
                 //create loop to add all the data for each section
-                console.log(output);
                 //call function that gets the average of all the data
                 var information = dataAverage(section+1);
+                //prepend the sum of averages onto the information array.
+                //this is done becaue it uses the same html as the average information and the sum appears first on the list
+                information.unshift(dataSum(information));
                 console.log(information);
                 //output the section number to title
                 document.getElementById('sectionNo').innerHTML= section+1; //plus one fixes off by one
                 //output the averages to the dom
                 for( var counter = 0; counter< output.length; counter++){
-                    // output.innerHTML= information[counter];
-                    output[counter].innerHTML= information[counter];
+                    output[counter].innerHTML= information[counter].toFixed(2);
                     
                 }
             });
@@ -478,10 +482,23 @@
                 sectionData[counter]= sectionData[counter]/sectionIteration;
             }
             //return the average
-            return sectionData;
-
-            
+            return sectionData;   
         }
+        // end data average
+        //create data sum variable to calculate the sum of all the averages.
+        //this is used in the BEAT document provided by client and would be deemed necesary for giving an idea on the area.
+        //data will be an array passed into the function. using a variable will break this.
+        function dataSum(data){
+            //create base variable in which all instances of array will be added to.
+            var sum= 0;
+            //loop through all instances of the array and add to the sum variable
+            for (var counter=0; counter< data.length; counter++){
+                sum= sum+data[counter];
+            }
+            //return the sum variable so it can be used else where
+            return sum;
+        }
+        //end data sum
     </script>
     <!--<script type="text/javascript" src="javascripts/map.js"></script>-->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIMhwAu2f-LXBt2NlhD6d7JwjuLPbo5MQ &callback=initMap" async defer></script>
