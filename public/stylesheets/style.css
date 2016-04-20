@@ -191,3 +191,15 @@ table {
     background-color: 
     #253D64;
 }
+.new {
+    color: #253D64;
+    border: none;
+    text-decoration: none;
+    padding: 5px;
+    background-color: #FFDA00;
+}
+.new:hover{
+    text-decoration: none;
+     color: #253D64;
+}
+    
