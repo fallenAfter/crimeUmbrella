@@ -61,7 +61,7 @@ router.get('/admin', isAdmin, function(req, res, next) {
 	
 });
 /* GET contact page. */
-router.get('/contact', isAuth, function(req, res, next) {
+router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Conatact' });
 });
 /* GET register page. */
