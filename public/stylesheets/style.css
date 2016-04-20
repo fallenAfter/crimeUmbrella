@@ -171,13 +171,7 @@ button {
     padding: 5px;
     background-color: #FFDA00;
 }
-#deletetn{
-    color: #253D64;
-    border: none;
-    text-decoration: none;
-    padding: 5px;
-    background-color: #FFDA00;
-}
+
 button a: hover{
     text-decoration: none;
 }
