@@ -26,6 +26,10 @@ background-attachment: fixed;
 a {
   color: #ffffff;
 }
+/*main styles*/
+main{
+    min-height: 60vh;
+}
 /*logo */
 #login>h1 {
     color: #ffffff;
@@ -46,7 +50,6 @@ a {
 a:hover {
     color: #ffffff; 
 }
-
 /*login form*/
 #login{
       background-color:  #253D64;
