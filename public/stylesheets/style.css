@@ -191,7 +191,7 @@ table {
     color: #253D64;
     border: none;
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     background-color: #FFDA00;
 }
 .new:hover{
@@ -209,4 +209,9 @@ table {
 }
 #section {
   color: #253D64;
+}
+/*add page*/
+
+legend{
+    color:#ffffff;
 }
