@@ -26,10 +26,6 @@ background-attachment: fixed;
 a {
   color: #ffffff;
 }
-/*main styles*/
-main{
-    min-height: 60vh;
-}
 /*logo */
 #login>h1 {
     color: #ffffff;
@@ -50,15 +46,13 @@ main{
 a:hover {
     color: #ffffff; 
 }
+
 /*login form*/
 #login{
       background-color:  #253D64;
     padding:50px;
     color:black;
      margin: 30px;
-}
-#login>form{
-    margin-top: 10vh;
 }
 #lofginbtn{
      color: #253D64;
@@ -188,10 +182,6 @@ button a: hover{
     text-decoration: none;
 }
 
-footer {
-   
-}
-
 table {
     padding: 2%;
     background-color: 
@@ -208,4 +198,15 @@ table {
     text-decoration: none;
      color: #253D64;
 }
-    
+/* adddata page styles-pop up form*/
+#myModal {
+   background-color: rgba(0,3,22,0.7);
+   border: 2px solid  rgba(0,3,22,0.6);
+  
+}
+#myModal legend {
+ color:#fff;
+}
+#section {
+  color: #253D64;
+}
