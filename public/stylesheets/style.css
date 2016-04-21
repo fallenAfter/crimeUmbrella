@@ -215,3 +215,9 @@ table {
 legend{
     color:#ffffff;
 }
+.container>button{
+    margin: 1em 0;
+}
+main{
+    min-height: 55vh;
+}
