@@ -1,14 +1,238 @@
+html{
+      height: 100%;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #506383 0%, #3a5073 51%, #253d64 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#253d64',GradientType=0 ); /* IE6-9 */
+background-size: cover;
+background-attachment: fixed;   
+  
+
 }
 
-a {
-  color: #00B7FF;
+#headertitle{
+    color: black;
+    background-color: #FFDA00;
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px;
 }
-/*tempotrary for functionality*/
+a {
+  color: #ffffff;
+}
+/*logo */
+#login>h1 {
+    color: #ffffff;
+}
+#logo {
+    padding-top:10px;
+    padding-right: 250px;
+}
+.navbar-brand {
+    margin-right: 0 px;
+    
+}
+#bs-example-navbar-collapse-1{
+    font-size: 1.5em;
+    color:#ffffff;
+    font-weight: bold;
+}
+a:hover {
+    color: #ffffff; 
+}
+
+/*login form*/
+#login{
+      background-color:  #253D64;
+    padding:50px;
+    color:black;
+     margin: 30px;
+}
+#lofginbtn{
+     color: #253D64;
+    padding: 10px;
+    background-color: #FFDA00;
+}
+/*register page #/*/
+#register{
+    background-color:  #253D64;
+    padding:50px;
+    color:black;
+     margin: 30px;
+}
+ #radiobtn {
+   color: white; 
+}
+#reigsterbtn{
+     color: #253D64;
+    padding: 10px;
+    background-color: #FFDA00;
+}
+
+/*admin page styles*/
+#admint{
+    margin:10%;
+}
+#admintb1 a {
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #506383 0%, #3a5073 51%, #253d64 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#253d64',GradientType=0 ); /* IE6-9 */
+background-repeat: no-repeat;
+    padding:50px;
+    color:black;
+    margin: 50px;
+}
+#admintb2 a {
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #506383 0%, #3a5073 51%, #253d64 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #1e5799 0%,#506383 0%,#3a5073 51%,#253d64 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#253d64',GradientType=0 ); /* IE6-9 */
+background-repeat: no-repeat;
+    padding:50px;
+    color:black;
+    margin: 50px;
+}
+
+/*data page form styles*/
+
+#dataform tbody>tr>td {
+    color:#ffffff;
+}
+/*styles for homepage icons*/
+#welcomeicon>img{
+
+}
+/*sidebar styles*/
+#data>h3{
+   
+    color: #253D64;
+    background-color: #FFDA00;
+    padding: 1.5%;
+    padding-left: 4%;
+   border-radius: 3px 3px 3px 3px;
+-moz-border-radius: 3px 3px 3px 3px;
+-webkit-border-radius: 3px 3px 3px 3px;
+border: 0px solid #000000;
+   margin: 0;
+  
+}
+/* contact form styles*/
+#contactf{
+     background-color:  #253D64;
+    padding:50px;
+    color:#ffffff;
+     margin-left: 30px;
+
+}
+#contactfbtn{
+     color: #253D64;
+    padding: 10px;
+    background-color: #FFDA00;
+}
+footer {
+    padding: 1%;
+    text-align: center;
+    background-color: #253D64;
+}
+main.map>section:first-of-type{
+    width:55%;
+    height:350px;
+    display:inline-block;
+}
+main.map>section:nth-of-type(2){
+    width:45%;
+    height:350px;
+    overflow-y:scroll;
+    display: inline-block;
+    padding:0 3%;
+}
+/*add form styles*/
+#addfrom{
+ background-color: #253D64;
+ padding: 4%;
+ 
+}
+#editform {
+    background-color: #253D64;
+     padding: 4%;
+}
 #map{
-	height:600px;
-	width:600px;
-	background-color: red;
+    width:100%;
+    height:100%;
+}
+/*button {
+    color: #253D64;
+    border: none;
+    text-decoration: none;
+    padding: 5px;
+    background-color: #FFDA00;
+    font-weight: bold;
+}*/
+
+button a: hover{
+    text-decoration: none;
+}
+
+table {
+    padding: 2%;
+    background-color: 
+    #253D64;
+}
+/*.new {
+    color: #253D64;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #FFDA00;
+}
+.new:hover{
+    text-decoration: none;
+     color: #253D64;
+}*/
+/* adddata page styles-pop up form*/
+#myModal {
+   background-color: rgba(0,3,22,0.7);
+   border: 2px solid  rgba(0,3,22,0.6);
+  
+}
+#myModal legend {
+ color:#fff;
+}
+#section {
+  color: #253D64;
+}
+/*add page*/
+
+legend{
+    color:#ffffff;
+}
+.container>button{
+    margin: 1em 0;
+}
+main{
+    min-height: 55vh;
+}
+label{
+    display:block;
+}
+input[type="range"]{
+    width:90%;
+    display: inline-block;
+}
+output{
+    width:10%;
+    display:inline-block;
+    box-sizing: border-box;
+    padding:0 1.5em;
+    color: #fff;
+    font-size: 1.3em;
 }

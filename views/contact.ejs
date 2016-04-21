@@ -1,11 +1,55 @@
 <%- include partials/header %>
-<div class="container">
-    <h1>Contact</h1>
-    <main role="main">
-        <section>
-        </section>
-    </main>
-    <div class="sidebar">
+ <div class="container" >
+  <h1>Contact Us</h1>
+<div id="contactf">
+   
+ <div class="row"> 
+   <main role="main" >
+        <!--login form-->
+     <div class="col-sm-6">  
+        <form method="post" action="contact">
+            <fieldset class="form-group">
+           <div class="col-sm-10">
+                <input class="form-control" id="fName" name="fName"  placeholder="Frist Name" required>
+            </div>
+             </fieldset>
+             <fieldset class="form-group">
+              <div class="col-sm-10">
+                <input class="form-control" id="lName" name="lName" type="text" placeholder="Last name" required>
+            </div>
+             </fieldset>
+             <fieldset class="form-group">
+              <div class="col-sm-10">
+                <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+             </fieldset>
+             <fieldset class="form-group">
+              <div class="col-sm-10">
+               <textarea class="form-control" id="message" name="message" placeholder="What do want to tell us?" required></textarea>
+            </div>
+             </fieldset>
+              <div class="col-sm-10">
+            <button id="contactfbtn" class="btn btn-primary col-md-4 col-md-offset-4">Send</button>
+            </div>
+          
+          </div>
+               </form> 
+               
+               <br>
+               <br>
+          <div id="information" class="col-sm-4">  
+                       <p>Dr. Eleanor Gittens <em></em></p>
+                        <p>Georgian’s School of Human Services and Community Safety <em></em></p>
+                         <p>825 Memorial Ave., Orillia, ON L3V 6S2<em></em></p>
+                          <p>appliedresearch@georgiancollege.ca <em></em></p>
+                           <p>Phone: 705.728.1968, ext. 1123<em></em></p>
+              
+          </div> 
     </div>
+  
+    </main>
+
+</div>
+</div>
 </div>
 <%- include partials/footer %>

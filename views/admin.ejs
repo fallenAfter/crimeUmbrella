@@ -1,11 +1,37 @@
 <%- include partials/header %>
 <div class="container">
-    <h1>Admin</h1>
     <main role="main">
-        <section>
-        </section>
+            <h1><%= title %></h1>
+           
+            <table class="table table-striped">
+                     
+                <a  href="/auth/register"><button class="btn btn-default">Add New User</button></a><br><br>
+                <thead>
+                <tr>
+                    <th scope="rowgroup">Username</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Admin Level</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                    <% for (var i = 0; i < accounts.length; i++) { %>
+                <tr>
+                    <td><%= accounts[i].username %></td>
+                    <td><%= accounts[i].name %></td>
+                    <td><%= accounts[i].adminLevel %></td>
+                    <td><a id="deletetn" href="/auth/delete/<%= accounts[i]._id %>" class=" confirmation"><button class="btn btn-default">Delete</button></a></td>
+                </tr>
+                <% } %>
+
+                   
+               
+                </tbody>
+            </table>
     </main>
     <div class="sidebar">
     </div>
 </div>
+<br><br><br><br>
 <%- include partials/footer %>

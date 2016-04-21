@@ -17,6 +17,8 @@ var localStrategy = require('passport-local').Strategy;
 
 // add auth connection
 var auth = require('./routes/auth');
+var data = require('./routes/data');
+var accounts = require('./routes/accounts');
 
 // create an app
 var app = express();
@@ -42,6 +44,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // enable flash for showing messages
 app.use(flash());
 // passport config section
@@ -65,6 +68,9 @@ app.use('/', routes);
 app.use('/users', users);
 // map requests at /auth
 app.use('/auth', auth);
+// map /data into scope
+app.use('/data', data);
+app.use('/accounts', accounts);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

@@ -1,39 +1,527 @@
 <%- include partials/header %>
     <div class="container">
         <h1>Map</h1>
-        <main role="main">
+        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">Add Data</button>
+        <main role="main" class="map">
             <section>
             	<div id="map"></div>
+            </section><section class="sidebar">
+                <h2>section <em id="sectionNo"></em></h2>
+                <div id="data">
+                    <ul class="list-group">
+                        <li class="list-group-item">Overall Score <em></em></li>
+                    </ul>
+                    <h3>Zoning</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Density <em></em></em></li>
+                        <li class="list-group-item">Zoning <em></em></li>
+                        <li class="list-group-item">Connecting Streets <em></em></li>
+                    </ul>
+                    <h3>Sidewalks</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Sidewalks <em></em></li>
+                        <li class="list-group-item">Width <em></em></li>
+                        <li class="list-group-item">Buffer <em></em></li>
+                        <li class="list-group-item">ramps <em></em></li>
+                        <li class="list-group-item">conditions <em></em></li>
+                        <li class="list-group-item">obstructions <em></em></li>
+                        <li class="list-group-item">Snow clearing <em></em></li>
+                        <li class="list-group-item">crosswalks <em></em></li>
+                        <li class="list-group-item">crosswalk symbols<em></em></li>
+                    </ul>
+                    <h3>Cycling</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">dedicated lanes <em></em></li>
+                        <li class="list-group-item">nearest dedicated lane <em></em></li>
+                        <li class="list-group-item">Cycling safety <em></em></li>
+                        <li class="list-group-item">Connection to city hubs <em></em></li>
+                        <li class="list-group-item">lane signage <em></em></li>
+                        <li class="list-group-item">crosswalk accesibility <em></em></li>
+                        <li class="list-group-item">bike racks <em></em></li>
+                        <li class="list-group-item">bus mounted bike racks <em></em></li>
+                    </ul>
+                    <h3>Roads</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Traffic Flow <em></em></li>
+                        <li class="list-group-item">street width <em></em></li>
+                        <li class="list-group-item">on street parking <em></em></li>
+                        <li class="list-group-item">traffic calming <em></em></li>
+                        <li class="list-group-item">veihicle restrictions <em></em></li>
+                    </ul>
+                    <h3>Trails</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Paths <em></em></li>
+                        <li class="list-group-item">Connection to city hubs <em></em></li>
+                        <li class="list-group-item">safety <em></em></li>
+                        <li class="list-group-item">skateboards <em></em></li>
+                    </ul>
+                    <h3>Public transit</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Stops <em></em></li>
+                        <li class="list-group-item">closest stop <em></em></li>
+                        <li class="list-group-item">shelters <em></em></li>
+                        <li class="list-group-item">route information <em></em></li>
+                    </ul>
+                    <h3>Safety</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">General safety <em></em></li>
+                        <li class="list-group-item">vacant buildings <em></em></li>
+                        <li class="list-group-item">persons watching <em></em></li>
+                    </ul>
+                    <h3>Asthetics</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Trees <em></em></li>
+                        <li class="list-group-item">street life <em></em></li>
+                        <li class="list-group-item">building proximity to street <em></em></li>
+                        <li class="list-group-item">weather protection <em></em></li>
+                        <li class="list-group-item">street furniture <em></em></li>
+                        <li class="list-group-item">streetscape <em></em></li>
+                    </ul>
+                    <h3>Services</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Service access <em></em></li>
+                        <li class="list-group-item">proximity to groceries <em></em></li>
+                        <li class="list-group-item">proximity to park <em></em></li>
+                        <li class="list-group-item">access to healthcare <em></em></li>
+                    </ul>
+
+                    <h3>Planning</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">OCP <em></em></li>
+                        <li class="list-group-item">pedestrian plan <em></em></li>
+                        <li class="list-group-item">municipal commities <em></em></li>
+                        <li class="list-group-item">events <em></em></li>
+                    </ul>
+
+                </div>
             </section>
         </main>
-        <div class="sidebar">
-        </div>
+        <aside id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <form action="/data/mapAdd" method="post">
+                    <label for="section">Region number</label>
+                    <input type="number" name="section" id="section" required>
+                    <fieldset>
+                        <legend>density</legend>
+
+                        <label for="density">density</label>
+                        <input type="range" min="1" max="3" value="1" name="density" id="density"><output></output>
+
+                        <label for="zoning">zoning</label>
+                        <input type="range" min="1" max="3" value="1" name="zoning" id="zoning"><output></output>
+
+                        <label for="streetConnection">connecting streets</label>
+                        <input type="range" min="1" max="3" value="1" name="streetConnection" id="streetConnection"><output></output>
+
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sidewalks</legend>
+
+                        <label for="sidewalks">sidewalks</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalks" id="sidewalks"><output></output>
+
+                        <label for="sidewalkWidth">sidewalk width</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkWidth" id="sidewalkWidth"><output></output>
+
+                        <label for="sidewalkBuffer">sidewalk buffer</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkBuffer" id="sidewalkBuffer"><output></output>
+
+                        <label for="sidewalkRamps">sidewalk ramps</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkRamps" id="sidewalkRamps"><output></output>
+
+                        <label for="sidewalkCondition">sidewalk conditions</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkCondition" id="sidewalkCondition"><output></output>
+
+                        <label for="sidewalkObstructions">sidewalk obstructions</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkObstructions" id="sidewalkObstructions"><output></output>
+
+                        <label for="sidewalkSnowfall">snow clearing</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkSnowfall" id="sidewalkSnowfall"><output></output>
+
+                        <label for="crosswalks">crosswalks</label>
+                        <input type="range" min="1" max="3" value="1" name="crosswalks" id="crosswalks"><output></output>
+
+                        <label for="crosswalkSymbols">crosswalk symbols</label>
+                        <input type="range" min="1" max="3" value="1" name="crosswalkSymbols" id="crosswalkSymbols"><output></output>
+
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Cycling</legend>
+
+                        <label for="cyclingLanes">Bike lanes</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanes" id="cyclingLanes"><output></output>
+
+                        <label for="cyclingLanesNearest">nearest bike lane</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanesNearest" id="cyclingLanesNearest"><output></output>
+
+                        <label for="CyclingRoadSafe">biking road safety</label>
+                        <input type="range" min="1" max="3" value="1" name="CyclingRoadSafe" id="CyclingRoadSafe"><output></output>
+
+                        <label for="cyclingLanesConnection">Bike lane connection to infrastructure</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanesConnection" id="cyclingLanesConnection"><output></output>
+
+                        <label for="cyclingLanesSignage">Bike lane signage</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanesSignage" id="cyclingLanesSignage"><output></output>
+
+                        <label for="cyclingLightsAccessability">Bike lane accessability</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLightsAccessability" id="cyclingLightsAccessability"><output></output>
+
+                        <label for="cyclingBikeRacks">Bike racks</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingBikeRacks" id="cyclingBikeRacks"><output></output>
+
+                        <label for="cyclingBusBikeRack">Bike racks on busses</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingBusBikeRack" id="cyclingBusBikeRack"><output></output>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Roads</legend>
+
+                        <label for="roadTrafficFlow">traffic flow</label>
+                        <input type="range" min="1" max="3" value="1" name="roadTrafficFlow" id="roadTrafficFlow"><output></output>
+
+                        <label for="roadStreetWidth">street width</label>
+                        <input type="range" min="1" max="3" value="1" name="roadStreetWidth" id="roadStreetWidth"><output></output>
+
+                        <label for="roadOnStreetParking">on street parking</label>
+                        <input type="range" min="1" max="3" value="1" name="roadOnStreetParking" id="roadOnStreetParking"><output></output>
+
+                        <label for="roadTrafficCalming">traffic calming</label>
+                        <input type="range" min="1" max="3" value="1" name="roadTrafficCalming" id="roadTrafficCalming"><output></output>
+
+                        <label for="roadVehicleRestrictions">veihicle restrictions</label>
+                        <input type="range" min="1" max="3" value="1" name="roadVehicleRestrictions" id="roadVehicleRestrictions"><output></output>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>trails</legend>
+
+                        <label for="trailPaths">paths</label>
+                        <input type="range" min="1" max="3" value="1" name="trailPaths" id="trailPaths"><output></output>
+
+                        <label for="trailsConnection">seperated paths</label>
+                        <input type="range" min="1" max="3" value="1" name="trailsConnection" id="trailsConnection"><output></output>
+
+                        <label for="trailSafety">trail safety</label>
+                        <input type="range" min="1" max="3" value="1" name="trailSafety" id="trailSafety"><output></output>
+
+                        <label for="trailSkateboard">skateboard access</label>
+                        <input type="range" min="1" max="3" value="1" name="trailSkateboard" id="trailSkateboard"><output></output>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>transit</legend>
+                        
+                        <label for="transitStops">Transit stops</label>
+                        <input type="range" min="1" max="3" value="1" name="transitStops" id="transitStops"><output></output>
+
+                        <label for="transitClosestStop"> closest Transit stop</label>
+                        <input type="range" min="1" max="3" value="1" name="transitClosestStop" id="transitClosestStop"><output></output>
+
+                        <label for="transitShelters">transit shelters</label>
+                        <input type="range" min="1" max="3" value="1" name="transitShelters" id="transitShelters"><output></output>
+
+                        <label for="transitRouteInfo">transit route information</label>
+                        <input type="range" min="1" max="3" value="1" name="transitRouteInfo" id="transitRouteInfo"><output></output>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>safety</legend>
+
+                        <label for="safetyGeneralSafety">general safety</label>
+                        <input type="range" min="1" max="3" value="1" name="safetyGeneralSafety" id="safetyGeneralSafety"><output></output>
+
+                        <label for="safetyVacantBuildings">vacant buildings</label>
+                        <input type="range" min="1" max="3" value="1" name="safetyVacantBuildings" id="safetyVacantBuildings"><output></output>
+
+                        <label for="safetyPersonsWatching">Eyes watching (people outside)</label>
+                        <input type="range" min="1" max="3" value="1" name="safetyPersonsWatching" id="safetyPersonsWatching"><output></output>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Asthetics</legend>
+
+                        <label for="aestheticTrees">ammount of trees</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticTrees" id="aestheticTrees"><output></output>
+
+                        <label for="aestheticStreetLife">street life</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticStreetLife" id="aestheticStreetLife"><output></output>
+
+                        <label for="aestheticBuildingProximity">building proximity to sidewalk</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticBuildingProximity" id="aestheticBuildingProximity"><output></output>
+
+                        <label for="aestheticWeatherProtection">weather protection</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticWeatherProtection" id="aestheticWeatherProtection"><output></output>
+
+                        <label for="aestheticStreetFurniture">street furniture</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticStreetFurniture" id="aestheticStreetFurniture"><output></output>
+
+                        <label for="aestheticStreetscape">streetscape</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticStreetscape" id="aestheticStreetscape"><output></output>
+                        
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>services</legend>
+
+                        <label for="servicesAccess">access to basic services</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesAccess" id="servicesAccess"><output></output>
+
+                        <label for="servicesGroceryProximity">access to grocery stores</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesGroceryProximity" id="servicesGroceryProximity"><output></output>
+
+                        <label for="servicesParkProximity">access to parks and schools</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesParkProximity" id="servicesParkProximity"><output></output>
+
+                        <label for="servicesHealthcare">access to health care</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesHealthcare" id="servicesHealthcare"><output></output>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>planning</legend>
+
+                        <label for="planningOCP">area’s Official Community Plan (OCP) address active transportation and the built environment</label>
+                        <input type="range" min="1" max="3" value="1" name="planningOCP" id="planningOCP"><output></output>
+
+                        <label for="planningPedestrianPlan">does a pedestrian plan exist</label>
+                        <input type="range" min="1" max="3" value="1" name="planningPedestrianPlan" id="planningPedestrianPlan"><output></output>
+
+                        <label for="planningMunicipalCommitees">are there local commitees</label>
+                        <input type="range" min="1" max="3" value="1" name="planningMunicipalCommitees" id="planningMunicipalCommitees"><output></output>
+
+                        <label for="planningEvents">are there events in the area</label>
+                        <input type="range" min="1" max="3" value="1" name="planningEvents" id="planningEvents"><output></output>
+
+                    </fieldset>
+                   <br>
+                     <button class="btn btn-default">Add Data Value</button>
+                </form>
+            </div>
+        </aside>
     </div>
     <script type="text/javascript">
-    	//create variable to hold map
-    	var map;
-     	function initMap() {
-	        map = new google.maps.Map(document.getElementById('map'), {
-	          center: {lat: 44.600, lng: -79.416},
-	          zoom: 13
-	        });
+        //create variable to hold map
+        var map;
+        //variable for coordinate limits
+        // this contains the the information for how large of an area to build sections
+        var north= 44.617070;
+        var left= -79.439220;
+        var south= 44.598616;
+        var right= -79.411755;
+        //create variables to hold box increments
+        var incrementY= 0.005;
+        var incrementX= 0.005;
+        //create variable to hold section interation
+        var sectionI = 0;
+        // create empty array to hold sections
+        var section = [];
+        //create an array to store handle the click function for each section
+        var sectionClick = new Array;
 
-        	var points= [
-    			{lat: 44.639101, lng: -79.467201},
-    			{lat: 44.567725, lng: -79.457588},
-    			{lat: 44.605135, lng: -79.381371},
-    			{lat: 44.639101, lng: -79.467201}
-    		];
-	        var rectangle= new google.maps.Polygon({
-	    		strokeColor: '#333',
-	    		map: map,
-	    		paths: points
-    		});
+        //store input elements into an array and check for range attribute so events can be made to update the output giving users a visual token for value
+        var inputs = document.getElementsByTagName('input');
+        for(var counter=0;counter<=inputs.length;counter++){
+            //check if input is a  slider
+            if(inputs[counter].getAttribute('type')==='range'){
+                // run function to set initial value
+                sliderValue(inputs[counter]);
+                //update value on change
+                inputs[counter].addEventListener('change', function(){
+                    sliderValue(this);
+                })
+
+            }
+        }
 
 
-    	}
-    	
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: 44.600, lng: -79.416},
+              zoom: 13
+            });
+
+            var XInter= 0;
+            var YInter= 0;
+
+            var la = left;
+            //build each of the latitude lines
+            for(la; la <= right; la=la+incrementX){
+                XInter++;
+                console.log('x: '+la);
+                //build for each of the longditude lines
+                for(var lo= north; lo >= south; lo=lo-incrementY){
+                    YInter++;
+                    console.log('y: '+lo);
+                    // set cardinal bounds for each of the section corners
+                    var bounds ={
+                        'north': lo,
+                        'south': lo-incrementY,
+                        'east': la+incrementX,
+                        'west': la
+                    };
+                    //add bounds to array this will be used in a loop to construct each individual box
+                    section.push(bounds);
+
+                }
+            }
+            //build tiles in the set bounds
+            var thisSection= new Array;
+            //loop through each section that bounds were built for and create the map overlay for them
+            for(var counter= 0; counter <= section.length; counter++){
+                thisSection[counter] = new google.maps.Rectangle({
+                    strokeColor: '#333',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 1,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35,
+                    map: map,
+                    bounds: section[counter]
+                });
+                //function to isolate counter to be specific with cell clicked
+                openSection(counter, thisSection[counter]);
+
+            }
+        };
+        //function to manage clicking a section
+        function openSection (section, event){
+            google.maps.event.addListener(event, 'click',function(){
+                // getthe html sections to output the variables
+                var output =document.getElementById('data').getElementsByTagName('em');
+
+                //create loop to add all the data for each section
+                //call function that gets the average of all the data
+                var information = dataAverage(section+1);
+                //prepend the sum of averages onto the information array.
+                //this is done becaue it uses the same html as the average information and the sum appears first on the list
+                information.unshift(dataSum(information));
+                console.log(information);
+                //output the section number to title
+                document.getElementById('sectionNo').innerHTML= section+1; //plus one fixes off by one
+                //output the averages to the dom
+                for( var counter = 0; counter< output.length; counter++){
+                    output[counter].innerHTML= information[counter].toFixed(2);
+                    
+                }
+            });
+        };
+
+
+        function dataAverage(section){
+            var sectionInfo= [];
+            var sectionData= [];
+            var sectionIteration = 0;
+            <% for(var dbCounter =0;dbCounter<research.length; dbCounter++){ %>
+                if('<%= research[dbCounter].section %>' == section){
+                    //assaign objects to variables
+                    var dataVariable =[
+                        <%= research[dbCounter].density %>,
+                        <%= research[dbCounter].zoning %>,
+                        <%= research[dbCounter].streetConnection %>,
+                        <%= research[dbCounter].sidewalks %>,
+                        <%= research[dbCounter].sidewalkWidth %>,
+                        <%= research[dbCounter].sidewalkBuffer %>,
+                        <%= research[dbCounter].sidewalkCondition %>,
+                        <%= research[dbCounter].sidewalkObstructions %>,
+                        <%= research[dbCounter].sidewalkSnowfall %>,
+                        <%= research[dbCounter].crosswalks %>,
+                        <%= research[dbCounter].crosswalkSymbols %>,
+                        <%= research[dbCounter].cyclingLanes %>,
+                        <%= research[dbCounter].cyclingLanesNearest %>,
+                        <%= research[dbCounter].CyclingRoadSafe %>,
+                        <%= research[dbCounter].cyclingLanesConnection %>,
+                        <%= research[dbCounter].cyclingLanesSignage %>,
+                        <%= research[dbCounter].cyclingLightsAccessability %>,
+                        <%= research[dbCounter].cyclingBikeRacks %>,
+                        <%= research[dbCounter].cyclingBusBikeRack %>,
+                        <%= research[dbCounter].roadTrafficFlow %>,
+                        <%= research[dbCounter].roadStreetWidth %>,
+                        <%= research[dbCounter].roadOnStreetParking %>,
+                        <%= research[dbCounter].roadTrafficCalming %>,
+                        <%= research[dbCounter].roadVehicleRestrictions %>,
+                        <%= research[dbCounter].trailPaths %>,
+                        <%= research[dbCounter].trailsConnection %>,
+                        <%= research[dbCounter].trailSafety %>,
+                        <%= research[dbCounter].trailsConnection %>,
+                        <%= research[dbCounter].trailSkateboard %>,
+                        <%= research[dbCounter].transitStops %>,
+                        <%= research[dbCounter].transitClosestStop %>,
+                        <%= research[dbCounter].transitShelters %>,
+                        <%= research[dbCounter].transitRouteInfo %>,
+                        <%= research[dbCounter].safetyGeneralSafety %>,
+                        <%= research[dbCounter].safetyVacantBuildings %>,
+                        <%= research[dbCounter].safetyPersonsWatching %>,
+                        <%= research[dbCounter].aestheticTrees %>,
+                        <%= research[dbCounter].aestheticStreetLife %>,
+                        <%= research[dbCounter].aestheticBuildingProximity %>,
+                        <%= research[dbCounter].aestheticWeatherProtection %>,
+                        <%= research[dbCounter].aestheticStreetFurniture %>,
+                        <%= research[dbCounter].aestheticStreetscape %>,
+                        <%= research[dbCounter].servicesAccess %>,
+                        <%= research[dbCounter].servicesGroceryProximity %>,
+                        <%= research[dbCounter].servicesParkProximity %>,
+                        <%= research[dbCounter].servicesHealthcare %>,
+                        <%= research[dbCounter].planningOCP %>,
+                        <%= research[dbCounter].planningPedestrianPlan %>,
+                        <%= research[dbCounter].planningMunicipalCommitees %>,
+                        <%= research[dbCounter].planningEvents %>,
+
+                    ];
+                    //add data as an array to the sectionInfor. each result that equals section that was clicked will be added as an array inside the array
+                    sectionInfo.push(dataVariable);
+                }
+            <% } %>
+            //select each databse return with clicked section and add them together and divide by the ammount 
+            for(var counter=0;counter<sectionInfo.length;counter++){
+                //create a variable to hold the current iteration of data from database
+                var thisSection = sectionInfo[counter];
+                //loop through each data entry and add to an array where subsequent entries will be added each loop iterations
+                for(var innerCounter=0;innerCounter<thisSection.length; innerCounter++){
+                    if(!sectionData[innerCounter]){
+                        sectionData[innerCounter]= thisSection[innerCounter];
+                    }
+                    else{
+                        sectionData[innerCounter]= sectionData[innerCounter]+thisSection[innerCounter];
+                    }
+                }
+                sectionIteration++;
+            }
+            console.log('iteration: '+sectionIteration);
+            //divide each dataset by the number of iterations to find the averate which will be displayed
+            for(var counter=0;counter<sectionData.length;counter++){
+                sectionData[counter]= sectionData[counter]/sectionIteration;
+            }
+            //return the average
+            return sectionData;   
+        }
+        // end data average
+        //create data sum variable to calculate the sum of all the averages.
+        //this is used in the BEAT document provided by client and would be deemed necesary for giving an idea on the area.
+        //data will be an array passed into the function. using a variable will break this.
+        function dataSum(data){
+            //create base variable in which all instances of array will be added to.
+            var sum= 0;
+            //loop through all instances of the array and add to the sum variable
+            for (var counter=0; counter< data.length; counter++){
+                sum= sum+data[counter];
+            }
+            //return the sum variable so it can be used else where
+            return sum;
+        }
+        //end data sum
+
+        //add script for updating an output that will show value of range slider
+        function sliderValue(input){
+            input.nextSibling.innerHTML=input.value;
+        }
     </script>
+    <!--<script type="text/javascript" src="javascripts/map.js"></script>-->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIMhwAu2f-LXBt2NlhD6d7JwjuLPbo5MQ &callback=initMap" async defer></script>
     
 <%- include partials/footer %>

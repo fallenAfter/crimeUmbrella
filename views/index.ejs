@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <ul>
-      <li><a href="home">Home</a></li>
-      <li><a href="map">Map</a></li>
-      <li><a href="data">Data</a></li>
-      <li><a href="admin">Admin</a></li>
-      <li><a href="Contact">Contact</a></li>
-    </ul>
-  </body>
-</html>
+<%- include partials/header %>
+ <div id="welcomeicon" class="container">
+     <div class="row">
+         <div class="col-sm-8 col-md-offset-4">
+         <h3>Welcome to Crime Umbrella</h3><br><br><br>
+     </div>
+     </div>
+ <div class="row">
+ <div class="col-sm-2">
+     </div>
+
+  <div class="col-sm-3">
+    <a href="/data/add" >
+      <img src="/images/assessment.png" alt="assessment">
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a href="/data" >
+      <img src="/images/viewData.png" alt="database">
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a href="/map" >
+      <img src="/images/viewMap.png" alt="map">
+    </a>
+  </div>
+</div>
+</div>
+<br><br><br><br><br>
+<%- include partials/footer %>
