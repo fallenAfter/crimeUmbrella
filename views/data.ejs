@@ -3,7 +3,7 @@
     <h1>Data</h1>
     <main id="dataform" role="main">
         <section>
-            <button class="btn btn-default"><a href="/data/add">Add Data</a></button><br><br>
+            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">Add Data</button>
             <table class="table table-striped">
         		<thead>
         			<tr>
@@ -307,5 +307,214 @@
 
         </section>
     </main>
+    <aside id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <form action="/data/add" method="post">
+                    <label for="section">Region number</label>
+                    <input type="number" name="section" id="section" required>
+                    <fieldset>
+                        <legend>density</legend>
+
+                        <label for="density">density</label>
+                        <input type="range" min="1" max="3" value="1" name="density" id="density">
+
+                        <label for="zoning">zoning</label>
+                        <input type="range" min="1" max="3" value="1" name="zoning" id="zoning">
+
+                        <label for="streetConnection">connecting streets</label>
+                        <input type="range" min="1" max="3" value="1" name="streetConnection" id="streetConnection">
+
+                    </fieldset>
+                    <fieldset>
+                        <legend>Sidewalks</legend>
+
+                        <label for="sidewalks">sidewalks</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalks" id="sidewalks">
+
+                        <label for="sidewalkWidth">sidewalk width</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkWidth" id="sidewalkWidth">
+
+                        <label for="sidewalkBuffer">sidewalk buffer</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkBuffer" id="sidewalkBuffer">
+
+                        <label for="sidewalkRamps">sidewalk ramps</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkRamps" id="sidewalkRamps">
+
+                        <label for="sidewalkCondition">sidewalk conditions</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkCondition" id="sidewalkCondition">
+
+                        <label for="sidewalkObstructions">sidewalk obstructions</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkObstructions" id="sidewalkObstructions">
+
+                        <label for="sidewalkSnowfall">snow clearing</label>
+                        <input type="range" min="1" max="3" value="1" name="sidewalkSnowfall" id="sidewalkSnowfall">
+
+                        <label for="crosswalks">crosswalks</label>
+                        <input type="range" min="1" max="3" value="1" name="crosswalks" id="crosswalks">
+
+                        <label for="crosswalkSymbols">crosswalk symbols</label>
+                        <input type="range" min="1" max="3" value="1" name="crosswalkSymbols" id="crosswalkSymbols">
+
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Cycling</legend>
+
+                        <label for="cyclingLanes">Bike lanes</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanes" id="cyclingLanes">
+
+                        <label for="cyclingLanesNearest">nearest bike lane</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanesNearest" id="cyclingLanesNearest">
+
+                        <label for="CyclingRoadSafe">biking road safety</label>
+                        <input type="range" min="1" max="3" value="1" name="CyclingRoadSafe" id="CyclingRoadSafe">
+
+                        <label for="cyclingLanesConnection">Bike lane connection to infrastructure</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanesConnection" id="cyclingLanesConnection">
+
+                        <label for="cyclingLanesSignage">Bike lane signage</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLanesSignage" id="cyclingLanesSignage">
+
+                        <label for="cyclingLightsAccessability">Bike lane accessability</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingLightsAccessability" id="cyclingLightsAccessability">
+
+                        <label for="cyclingBikeRacks">Bike racks</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingBikeRacks" id="cyclingBikeRacks">
+
+                        <label for="cyclingBusBikeRack">Bike racks on busses</label>
+                        <input type="range" min="1" max="3" value="1" name="cyclingBusBikeRack" id="cyclingBusBikeRack">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Roads</legend>
+
+                        <label for="roadTrafficFlow">traffic flow</label>
+                        <input type="range" min="1" max="3" value="1" name="roadTrafficFlow" id="roadTrafficFlow">
+
+                        <label for="roadStreetWidth">street width</label>
+                        <input type="range" min="1" max="3" value="1" name="roadStreetWidth" id="roadStreetWidth">
+
+                        <label for="roadOnStreetParking">on street parking</label>
+                        <input type="range" min="1" max="3" value="1" name="roadOnStreetParking" id="roadOnStreetParking">
+
+                        <label for="roadTrafficCalming">traffic calming</label>
+                        <input type="range" min="1" max="3" value="1" name="roadTrafficCalming" id="roadTrafficCalming">
+
+                        <label for="roadVehicleRestrictions">veihicle restrictions</label>
+                        <input type="range" min="1" max="3" value="1" name="roadVehicleRestrictions" id="roadVehicleRestrictions">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>trails</legend>
+
+                        <label for="trailPaths">paths</label>
+                        <input type="range" min="1" max="3" value="1" name="trailPaths" id="trailPaths">
+
+                        <label for="trailsConnection">seperated paths</label>
+                        <input type="range" min="1" max="3" value="1" name="trailsConnection" id="trailsConnection">
+
+                        <label for="trailSafety">trail safety</label>
+                        <input type="range" min="1" max="3" value="1" name="trailSafety" id="trailSafety">
+
+                        <label for="trailSkateboard">skateboard access</label>
+                        <input type="range" min="1" max="3" value="1" name="trailSkateboard" id="trailSkateboard">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>transit</legend>
+                        
+                        <label for="transitStops">Transit stops</label>
+                        <input type="range" min="1" max="3" value="1" name="transitStops" id="transitStops">
+
+                        <label for="transitClosestStop"> closest Transit stop</label>
+                        <input type="range" min="1" max="3" value="1" name="transitClosestStop" id="transitClosestStop">
+
+                        <label for="transitShelters">transit shelters</label>
+                        <input type="range" min="1" max="3" value="1" name="transitShelters" id="transitShelters">
+
+                        <label for="transitRouteInfo">transit route information</label>
+                        <input type="range" min="1" max="3" value="1" name="transitRouteInfo" id="transitRouteInfo">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>safety</legend>
+
+                        <label for="safetyGeneralSafety">general safety</label>
+                        <input type="range" min="1" max="3" value="1" name="safetyGeneralSafety" id="safetyGeneralSafety">
+
+                        <label for="safetyVacantBuildings">vacant buildings</label>
+                        <input type="range" min="1" max="3" value="1" name="safetyVacantBuildings" id="safetyVacantBuildings">
+
+                        <label for="safetyPersonsWatching">Eyes watching (people outside)</label>
+                        <input type="range" min="1" max="3" value="1" name="safetyPersonsWatching" id="safetyPersonsWatching">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Asthetics</legend>
+
+                        <label for="aestheticTrees">ammount of trees</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticTrees" id="aestheticTrees">
+
+                        <label for="aestheticStreetLife">street life</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticStreetLife" id="aestheticStreetLife">
+
+                        <label for="aestheticBuildingProximity">building proximity to sidewalk</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticBuildingProximity" id="aestheticBuildingProximity">
+
+                        <label for="aestheticWeatherProtection">weather protection</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticWeatherProtection" id="aestheticWeatherProtection">
+
+                        <label for="aestheticStreetFurniture">street furniture</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticStreetFurniture" id="aestheticStreetFurniture">
+
+                        <label for="aestheticStreetscape">streetscape</label>
+                        <input type="range" min="1" max="3" value="1" name="aestheticStreetscape" id="aestheticStreetscape">
+                        
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>services</legend>
+
+                        <label for="servicesAccess">access to basic services</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesAccess" id="servicesAccess">
+
+                        <label for="servicesGroceryProximity">access to grocery stores</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesGroceryProximity" id="servicesGroceryProximity">
+
+                        <label for="servicesParkProximity">access to parks and schools</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesParkProximity" id="servicesParkProximity">
+
+                        <label for="servicesHealthcare">access to health care</label>
+                        <input type="range" min="1" max="3" value="1" name="servicesHealthcare" id="servicesHealthcare">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>planning</legend>
+
+                        <label for="planningOCP">area’s Official Community Plan (OCP) address active transportation and the built environment</label>
+                        <input type="range" min="1" max="3" value="1" name="planningOCP" id="planningOCP">
+
+                        <label for="planningPedestrianPlan">does a pedestrian plan exist</label>
+                        <input type="range" min="1" max="3" value="1" name="planningPedestrianPlan" id="planningPedestrianPlan">
+
+                        <label for="planningMunicipalCommitees">are there local commitees</label>
+                        <input type="range" min="1" max="3" value="1" name="planningMunicipalCommitees" id="planningMunicipalCommitees">
+
+                        <label for="planningEvents">are there events in the area</label>
+                        <input type="range" min="1" max="3" value="1" name="planningEvents" id="planningEvents">
+
+                    </fieldset>
+                   <br>
+                     <button class="btn btn-default">Add Data Value</button>
+                </form>
+            </div>
+        </aside>
 </div>
 <%- include partials/footer %>
